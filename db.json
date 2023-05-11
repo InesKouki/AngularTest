@@ -1,0 +1,29 @@
+{
+  "Video": [
+    {
+      "id": 1,
+      "title": "Video1",
+      "genre": "Music",
+      "public": false,
+      "nbrShared": 0
+    },
+    {
+      "id":2,
+      "title": "Video2",
+      "genre": "Educatif",
+      "public": true,
+      "nbrShared": 2
+
+    },
+    {
+      "id":2,
+      "title": "Video3",
+      "genre": "Educatif",
+      "public": true,
+      "nbrShared": 3
+
+    }
+
+  ]
+}
+

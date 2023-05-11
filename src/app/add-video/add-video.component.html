@@ -1,0 +1,50 @@
+<form #f="ngForm" (submit)="addVideo()">
+    <div class="form-group">
+      <label for="id">Id *</label>
+      <input type="number" class="form-control" #id="ngModel" name="id" placeholder="Enter video id" [(ngModel)]="video.id" required>
+      <div *ngIf="id.invalid && (id.dirty || id.touched)">
+        <div *ngIf="id.errors?.['required']">
+          <small class="text-danger">Id is required.</small>
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="title">Title *</label>
+      <input type="text" class="form-control" #title="ngModel" name="title" placeholder="Enter video title" [(ngModel)]="video.title" required pattern="^[A-Z].*">
+      <div *ngIf="title.invalid && (title.dirty || title.touched)">
+        <div *ngIf="title.errors?.['required']">
+          <small class="text-danger">Title is required.</small>
+        </div>
+        <div *ngIf="title.errors?.['pattern']">
+          <small class="text-danger">Title must start with a capital letter.</small>
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="genre">Genre *</label>
+      <input type="text" class="form-control" #genre="ngModel" name="genre" placeholder="Enter video genre" [(ngModel)]="video.genre" required pattern="^(action|documentaire|comédie)$">
+      <div *ngIf="genre.invalid && (genre.dirty || genre.touched)">
+        <div *ngIf="genre.errors?.['required']">
+          <small class="text-danger">Genre is required.</small>
+        </div>
+        <div *ngIf="genre.errors?.['pattern']">
+          <small class="text-danger">Genre must be either action, documentaire, or comédie.</small>
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="public">Public</label>
+      <input type="text" class="form-control" name="public" placeholder="Enter video public" [(ngModel)]="video.public">
+    </div>
+  
+    <div class="form-group">
+      <label for="nbrShared">Number Shared</label>
+      <input type="text" class="form-control" name="nbrShared" placeholder="Enter video number shared" [(ngModel)]="video.nbrShared">
+    </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+  </form>
+  
