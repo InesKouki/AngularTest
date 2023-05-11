@@ -5,7 +5,7 @@ import { Video } from '../Model/VideoModel';
   providedIn: 'root'
 })
 export class VideoServiceService {
-  url:string ='http://localhost:3000/video/';
+  url:string ='http://localhost:3000/videos/';
   constructor(private http: HttpClient) { }
 
   getVideos() {

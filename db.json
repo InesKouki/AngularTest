@@ -24,6 +24,30 @@
 
     }
 
-  ]
-}
+  ],
+  
+    "routes": [
+      {
+        "path": "/videos",
+        "method": "GET",
+        "handler": "getVideos"
+      },
+      {
+        "path": "/addVideo",
+        "method": "POST",
+        "handler": "add"
+      },
+      {
+        "path": "/videos/:id",
+        "method": "PUT",
+        "handler": "increment"
+      },
+      {
+        "path": "/videos/:id",
+        "method": "DELETE",
+        "handler": "deleteVideo"
+      }
+    ]
+  }
+
 
